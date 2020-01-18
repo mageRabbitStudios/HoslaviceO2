@@ -2,7 +2,7 @@ import org.gradle.api.JavaVersion
 
 object Versions {
 
-    const val kotlinVersion = "1.3.21"
+    const val kotlinVersion = "1.3.50"
     const val coroutinesVersion = "1.2.2"
 
     const val jacocoVersion = "0.8.1"
