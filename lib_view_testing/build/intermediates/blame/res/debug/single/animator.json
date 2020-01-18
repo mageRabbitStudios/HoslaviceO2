@@ -1,0 +1,38 @@
+[
+    {
+        "merged": "C:\\Android Studio Projects\\Test_HodslaviceO2\\HoslaviceO2\\lib_view_testing\\build\\intermediates\\res\\merged\\debug\\animator\\mtrl_btn_state_list_anim.xml",
+        "source": "C:\\Users\\kinzl\\.gradle\\caches\\transforms-2\\files-2.1\\41963bd3fa9e5788d0115730814f0568\\res\\animator\\mtrl_btn_state_list_anim.xml"
+    },
+    {
+        "merged": "C:\\Android Studio Projects\\Test_HodslaviceO2\\HoslaviceO2\\lib_view_testing\\build\\intermediates\\res\\merged\\debug\\animator\\mtrl_fab_show_motion_spec.xml",
+        "source": "C:\\Users\\kinzl\\.gradle\\caches\\transforms-2\\files-2.1\\41963bd3fa9e5788d0115730814f0568\\res\\animator\\mtrl_fab_show_motion_spec.xml"
+    },
+    {
+        "merged": "C:\\Android Studio Projects\\Test_HodslaviceO2\\HoslaviceO2\\lib_view_testing\\build\\intermediates\\res\\merged\\debug\\animator\\design_fab_show_motion_spec.xml",
+        "source": "C:\\Users\\kinzl\\.gradle\\caches\\transforms-2\\files-2.1\\41963bd3fa9e5788d0115730814f0568\\res\\animator\\design_fab_show_motion_spec.xml"
+    },
+    {
+        "merged": "C:\\Android Studio Projects\\Test_HodslaviceO2\\HoslaviceO2\\lib_view_testing\\build\\intermediates\\res\\merged\\debug\\animator\\mtrl_fab_transformation_sheet_expand_spec.xml",
+        "source": "C:\\Users\\kinzl\\.gradle\\caches\\transforms-2\\files-2.1\\41963bd3fa9e5788d0115730814f0568\\res\\animator\\mtrl_fab_transformation_sheet_expand_spec.xml"
+    },
+    {
+        "merged": "C:\\Android Studio Projects\\Test_HodslaviceO2\\HoslaviceO2\\lib_view_testing\\build\\intermediates\\res\\merged\\debug\\animator\\mtrl_btn_unelevated_state_list_anim.xml",
+        "source": "C:\\Users\\kinzl\\.gradle\\caches\\transforms-2\\files-2.1\\41963bd3fa9e5788d0115730814f0568\\res\\animator\\mtrl_btn_unelevated_state_list_anim.xml"
+    },
+    {
+        "merged": "C:\\Android Studio Projects\\Test_HodslaviceO2\\HoslaviceO2\\lib_view_testing\\build\\intermediates\\res\\merged\\debug\\animator\\mtrl_chip_state_list_anim.xml",
+        "source": "C:\\Users\\kinzl\\.gradle\\caches\\transforms-2\\files-2.1\\41963bd3fa9e5788d0115730814f0568\\res\\animator\\mtrl_chip_state_list_anim.xml"
+    },
+    {
+        "merged": "C:\\Android Studio Projects\\Test_HodslaviceO2\\HoslaviceO2\\lib_view_testing\\build\\intermediates\\res\\merged\\debug\\animator\\design_fab_hide_motion_spec.xml",
+        "source": "C:\\Users\\kinzl\\.gradle\\caches\\transforms-2\\files-2.1\\41963bd3fa9e5788d0115730814f0568\\res\\animator\\design_fab_hide_motion_spec.xml"
+    },
+    {
+        "merged": "C:\\Android Studio Projects\\Test_HodslaviceO2\\HoslaviceO2\\lib_view_testing\\build\\intermediates\\res\\merged\\debug\\animator\\mtrl_fab_hide_motion_spec.xml",
+        "source": "C:\\Users\\kinzl\\.gradle\\caches\\transforms-2\\files-2.1\\41963bd3fa9e5788d0115730814f0568\\res\\animator\\mtrl_fab_hide_motion_spec.xml"
+    },
+    {
+        "merged": "C:\\Android Studio Projects\\Test_HodslaviceO2\\HoslaviceO2\\lib_view_testing\\build\\intermediates\\res\\merged\\debug\\animator\\mtrl_fab_transformation_sheet_collapse_spec.xml",
+        "source": "C:\\Users\\kinzl\\.gradle\\caches\\transforms-2\\files-2.1\\41963bd3fa9e5788d0115730814f0568\\res\\animator\\mtrl_fab_transformation_sheet_collapse_spec.xml"
+    }
+]

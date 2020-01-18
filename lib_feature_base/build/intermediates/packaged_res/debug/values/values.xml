@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="app__black">#000000</color>
+    <color name="app__black_a30">#4D000000</color>
+    <color name="app__grey">#cccccc</color>
+    <color name="app__status_bar_grey">#d9d9d9</color>
+    <color name="app__white">#ffffff</color>
+    <item name="action_fragmentContributorsList_to_fragmentContributorMap" type="id"/>
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimaryDark">@color/app__status_bar_grey</item>
+        <item name="colorPrimary">@color/app__grey</item>
+    </style>
+    <style name="AppTheme.Launcher" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:windowBackground">@drawable/splash_hoslavice</item>
+    </style>
+    <style name="AppTheme.Text.Errors" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/app__black</item>
+        <item name="android:textSize">40sp</item>
+    </style>
+</resources>
