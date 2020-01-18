@@ -39,13 +39,12 @@ abstract class FragmentKoinTest<FRAGMENT : Fragment> {
 
     private lateinit var fragmentScenario: FragmentScenario<Fragment>
 
-    private val targetContext: Context
-        get() = InstrumentationRegistry.getInstrumentation().targetContext
+    val targetContext: Context get() = InstrumentationRegistry.getInstrumentation().targetContext
 
     abstract val fragmentInstance: FRAGMENT
 
     @Suppress("UNCHECKED_CAST")
-    protected val subject: FRAGMENT
+    val subject: FRAGMENT
         get() {
             var fragment: Fragment? = null
             fragmentScenario.onFragment {
@@ -72,15 +71,6 @@ abstract class FragmentKoinTest<FRAGMENT : Fragment> {
         Intents.release()
     }
 
-    protected fun getResString(@StringRes id: Int, args: Any? = null): String
-            = targetContext.resources.getString(id, args)
-
-    protected fun getResInteger(@IntegerRes id: Int) = targetContext.resources.getInteger(id)
-
-    protected fun getResColor(@ColorRes id: Int) = ContextCompat.getColor(targetContext, id)
-
-    protected fun getResDrawable(@DrawableRes id: Int) = ContextCompat.getDrawable(targetContext, id)
-
     protected fun launchFragment() {
         fragmentScenario = launchFragmentInContainer {
             fragmentInstance as Fragment
@@ -89,38 +79,6 @@ abstract class FragmentKoinTest<FRAGMENT : Fragment> {
         subject.view?.let { view ->
             Navigation.setViewNavController(view, mockNavController)
         }
-    }
-
-    /**
-     * Great for asserting whenever your view is in the hierarchy or not
-     * */
-    @RequiresApi(Build.VERSION_CODES.ECLAIR)
-    protected fun printViewHierarchy() {
-        InstrumentationTestsHelper.printViewHierarchy(subject.requireActivity())
-    }
-
-    protected fun Int.assertItsVisible() {
-        getViewFromActivityById(this)?.let {
-            assertThat(it.visibility).isEqualTo(View.VISIBLE)
-        }
-    }
-
-    protected fun Int.assertItsGone() {
-        getViewFromActivityById(this)?.let {
-            assertThat(it.visibility).isEqualTo(View.GONE)
-        }
-    }
-
-    private fun getViewFromActivityById(id: Int): View? {
-        val activity = subject.requireActivity()
-        activity.let {
-            it.findViewById<View>(id)?.let { view ->
-                return view
-            } ?: run {
-                fail("View is null and so no visibility check can take place on it")
-            }
-        }
-        return null
     }
 
     protected fun mockKoinForFragment(mocks: Module.() -> Unit) {

@@ -10,6 +10,7 @@ import android.view.ViewGroup
 import androidx.annotation.NonNull
 import androidx.annotation.Nullable
 import androidx.annotation.RequiresApi
+import com.kinzlstanislav.hoslaviceo2.viewtesting.FragmentKoinTest
 import java.util.*
 
 object InstrumentationTestsHelper {
