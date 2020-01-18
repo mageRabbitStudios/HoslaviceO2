@@ -22,7 +22,7 @@
     <!-- *************************************************************************************** -->
 
     <style name="AppTheme.Text.Errors" parent="TextAppearance.AppCompat">
-        <item name="android:textColor">@color/app__black</item>
+        <item name="android:textColor">@color/app__blue</item>
         <item name="android:textSize">40sp</item>
     </style>
 

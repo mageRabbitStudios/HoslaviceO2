@@ -18,6 +18,8 @@ android {
 }
 
 dependencies {
+    implementation project(':feature_list')
+
     implementation project(':lib_feature_base')
     implementation project(":lib_architecture_repository")
     implementation project(":lib_architecture_network")

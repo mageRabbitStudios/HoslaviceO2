@@ -1,4 +1,5 @@
 include ':app',
+        ':feature_list',
         ':lib_feature_base',
         ':lib_view_testing',
         ':lib_unit_testing',
