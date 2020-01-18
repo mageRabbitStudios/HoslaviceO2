@@ -18,6 +18,10 @@ class FragmentList : BaseFragment() {
 
     override val layoutResourceId = R.layout.fragment_list
 
+    override var customBackButtonAction: (() -> Unit)? = {
+        requireActivity().finishAndRemoveTask()
+    }
+
     private val listViewModel: ListViewModel by sharedViewModel()
     private val imageLoader: GlideImageLoader by inject()
 

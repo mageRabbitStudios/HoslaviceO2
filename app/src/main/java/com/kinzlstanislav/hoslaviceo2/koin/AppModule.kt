@@ -19,7 +19,7 @@ import retrofit2.converter.moshi.MoshiConverterFactory
 
 val appModule = module {
     // view models
-    single { ListViewModel(get()) }
+    factory { ListViewModel(get()) }
 
     // repository
     factory { UsersRepository(get(), get(), get()) }

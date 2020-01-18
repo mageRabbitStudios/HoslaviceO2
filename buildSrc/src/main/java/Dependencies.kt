@@ -61,6 +61,7 @@ object Versions {
     const val koinVersion = "2.0.1"
 
     const val roomVersion = "2.2.3"
+    const val lifecycleVersion = "2.1.0"
 }
 
 object DefaultConfigurations {
@@ -101,10 +102,9 @@ object Dependencies {
     const val androidXCoreKtx = "androidx.core:core-ktx:${Versions.androidXCore}"
 
     // Architecture Components
-    const val lifecycleCommonJava8 = "androidx.lifecycle:lifecycle-common-java8:${Versions.archComponentsVersion}"
-    // lifeCycleExtension already contains LiveData & ViewModel dependencies
-    const val lifecycleViewModel = "androidx.lifecycle:lifecycle-viewmodel-ktx:2.1.0-rc01"
-    const val lifecycleLiveData = "androidx.lifecycle:lifecycle-livedata-ktx:2.1.0-rc01"
+    const val lifecycleCommonJava8 = "androidx.lifecycle:lifecycle-common-java8:${Versions.lifecycleVersion}"
+    const val lifecycleViewModel = "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.lifecycleVersion}"
+    const val lifecycleLiveData = "androidx.lifecycle:lifecycle-livedata-ktx:${Versions.lifecycleVersion}"
 
     const val navigationFragment = "androidx.navigation:navigation-fragment-ktx:${Versions.navigationVersion}"
     const val navigationUI = "androidx.navigation:navigation-ui-ktx:${Versions.navigationVersion}"
@@ -161,13 +161,12 @@ object TestDependencies {
     const val testSupportRunner = "androidx.test:runner:${Versions.androidxTestVersion}"
     const val androidxTestRules = "androidx.test:rules:${Versions.androidxTestVersion}"
     const val androidxTestCore = "androidx.test:core:${Versions.androidxTestCoreVersion}"
-    const val lifecycleTestHelpers = "androidx.arch.core:core-testing:${Versions.archComponentsVersion}"
+    const val lifecycleTestHelpers = "androidx.arch.core:core-testing:${Versions.lifecycleVersion}"
     const val robolectric = "org.robolectric:robolectric:${Versions.robolectricVersion}"
     const val espressoIntents = "androidx.test.espresso:espresso-intents:${Versions.espressoVersion}"
     const val espressoCore = "androidx.test.espresso:espresso-core:${Versions.espressoVersion}"
     const val espressoContrib = "androidx.test.espresso:espresso-contrib:${Versions.espressoVersion}"
     const val androidxJunit = "androidx.test.ext:junit:${Versions.androidxJunitVersion}" // Holds non deprecated AndroidJUnit4 runner
-    const val archCoreTesting = "androidx.arch.core:core-testing:${Versions.archComponentsVersion}"
     const val androidxFragmentTesting = "androidx.fragment:fragment-testing:${Versions.androidxFragmentTestingVersion}"
     const val barista = "com.schibsted.spain:barista:${Versions.baristaVersion}"
     const val coroutinesTest = "org.jetbrains.kotlinx:kotlinx-coroutines-test:${Versions.coroutinesVersion}"
