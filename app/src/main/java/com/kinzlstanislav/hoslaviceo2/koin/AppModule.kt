@@ -6,6 +6,7 @@ import com.kinzlstanislav.hoslaviceo2.architecture.network.HoslaviceO2RestData
 import com.kinzlstanislav.hoslaviceo2.architecture.network.UsersRepository
 import com.kinzlstanislav.hoslaviceo2.architecture.network.api.HoslaviceO2ApiService
 import com.kinzlstanislav.hoslaviceo2.architecture.network.mapper.UsersMapper
+import com.kinzlstanislav.hoslaviceo2.base.imageloading.GlideImageLoader
 import com.kinzlstanislav.hoslaviceo2.list.viewmodel.ListViewModel
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -27,7 +28,7 @@ val appModule = module {
     factory {
         Retrofit.Builder()
             .baseUrl(HoslaviceO2RestData.BASE_URL)
-            .addConverterFactory(MoshiConverterFactory.create().asLenient())
+            .addConverterFactory(MoshiConverterFactory.create())
             .addCallAdapterFactory(CoroutineCallAdapterFactory())
             .client(
                 OkHttpClient.Builder().apply {
@@ -41,4 +42,7 @@ val appModule = module {
             .build()
             .create(HoslaviceO2ApiService::class.java)
     }
+
+    // other
+    single { GlideImageLoader() }
 }

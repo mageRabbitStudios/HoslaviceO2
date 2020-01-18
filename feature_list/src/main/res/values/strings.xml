@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="is_master">Je správce</string>
+    <string name="is_not_master">Není správce</string>
+</resources>
