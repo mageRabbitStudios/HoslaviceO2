@@ -1,7 +1,9 @@
 package com.kinzlstanislav.hoslaviceo2.list.view
 
 import androidx.lifecycle.Observer
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.kinzlstanislav.hoslaviceo2.base.extensions.observe
+import com.kinzlstanislav.hoslaviceo2.base.extensions.showToast
 import com.kinzlstanislav.hoslaviceo2.base.imageloading.GlideImageLoader
 import com.kinzlstanislav.hoslaviceo2.base.view.BaseFragment
 import com.kinzlstanislav.hoslaviceo2.list.R
@@ -24,12 +26,25 @@ class FragmentList : BaseFragment() {
     override fun onFragmentCreated() {
         observe(listViewModel.state, Observer { state ->
             users_list_flipper.showView(when (state) {
-                is UsersLoaded -> users_list_recycler_view.also { usersAdapter.updateItems(state.users) }
+                is UsersLoadedOffline -> users_list_recycler_view.also {
+                    usersAdapter.updateItems(state.users)
+                    showToast("LOL: Users loaded from offline database")
+                }
+                is UsersLoaded -> users_list_recycler_view.also {
+                    usersAdapter.updateItems(state.users)
+                    showToast("Users loaded online")
+                }
                 LoadingUsers -> users_list_loader
                 NetworkError -> users_list_network_error
                 GenericError -> users_list_generic_error
             })
         })
         users_list_recycler_view.adapter = usersAdapter
+        users_swipe_to_refresh.apply {
+            setOnRefreshListener {
+                listViewModel.getUsers()
+                isRefreshing = false
+            }
+        }
     }
 }

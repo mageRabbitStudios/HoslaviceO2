@@ -26,7 +26,7 @@ object Versions {
     const val daggerVersion = "2.16"
 
     const val androidGradlePluginVersion = "3.3.2"
-    const val supportLibraryVersion = "1.0.0"
+    const val supportLibraryVersion = "1.1.0-beta01"
 
     const val glideVersion = "4.8.0"
 
@@ -59,6 +59,8 @@ object Versions {
     const val googleMapsVersion = "16.1.0"
 
     const val koinVersion = "2.0.1"
+
+    const val roomVersion = "2.2.3"
 }
 
 object DefaultConfigurations {
@@ -141,6 +143,11 @@ object Dependencies {
 
     //Maps
     const val googleMaps = "com.google.android.gms:play-services-maps:${Versions.googleMapsVersion}"
+
+    //Room
+    const val roomRuntime = "androidx.room:room-runtime:${Versions.roomVersion}"
+    const val roomCompiler = "androidx.room:room-compiler:${Versions.roomVersion}"
+    const val roomKtx = "androidx.room:room-ktx:${Versions.roomVersion}"
 }
 
 @SuppressWarnings("MaxLineLength")
@@ -165,6 +172,7 @@ object TestDependencies {
     const val barista = "com.schibsted.spain:barista:${Versions.baristaVersion}"
     const val coroutinesTest = "org.jetbrains.kotlinx:kotlinx-coroutines-test:${Versions.coroutinesVersion}"
     const val mockk = "io.mockk:mockk:1.9.3"
+    const val roomTesting = "androidx.room:room-testing:${Versions.roomVersion}"
 }
 
 @SuppressWarnings("MaxLineLength")

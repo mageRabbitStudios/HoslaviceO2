@@ -1,8 +1,7 @@
+apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 apply plugin: 'kotlin-android'
-
-apply from: rootProject.file('test-settings.gradle')
 
 android {
     compileSdkVersion DefaultConfigurations.compileSdkVersion
@@ -23,11 +22,7 @@ androidExtensions {
 }
 
 dependencies {
-    implementation project(":lib_core")
+    testImplementation project(":lib_unit_testing")
 
     implementation Dependencies.kotlin
-    implementation Dependencies.coroutines
-    implementation Dependencies.coroutinesAndroidExtension
-
-    testImplementation project(":lib_unit_testing")
 }

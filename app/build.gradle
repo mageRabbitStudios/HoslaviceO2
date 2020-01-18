@@ -43,4 +43,6 @@ dependencies {
     implementation Dependencies.retrofit
     implementation Dependencies.retrofitCoroutineAdapter
     implementation Dependencies.retrofitMoshiAdapter
+
+    implementation Dependencies.roomRuntime
 }

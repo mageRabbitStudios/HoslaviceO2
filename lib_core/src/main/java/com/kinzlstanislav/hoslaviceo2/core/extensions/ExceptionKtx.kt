@@ -1,4 +1,4 @@
-package com.kinzlstanislav.hoslaviceo2.base.extensions
+package com.kinzlstanislav.hoslaviceo2.core.extensions
 
 import java.net.ConnectException
 import java.net.SocketTimeoutException

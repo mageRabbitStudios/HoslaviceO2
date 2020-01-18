@@ -1,8 +1,14 @@
 package com.kinzlstanislav.hoslaviceo2.architecture.network.model
 
+import androidx.room.ColumnInfo
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+
+@Entity
 data class User(
-    val name: String,
-    val phoneNumber: String,
-    val isMaster: Boolean,
-    val avatarUrl: String
+    @PrimaryKey(autoGenerate = true) val userId: Int = 0,
+    @ColumnInfo val name: String,
+    @ColumnInfo val phoneNumber: String,
+    @ColumnInfo val isMaster: Boolean,
+    @ColumnInfo val avatarUrl: String
 )

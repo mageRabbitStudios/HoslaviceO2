@@ -6,8 +6,8 @@
     android:background="@color/app__white"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <com.kinzlstanislav.hoslaviceo2.base.view.StateViewFlipper
-        android:id="@+id/users_list_flipper"
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/users_swipe_to_refresh"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -15,38 +15,44 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
-        <ProgressBar
-            android:id="@+id/users_list_loader"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:indeterminate="true"
-            android:indeterminateTint="@color/app__blue"
-            android:indeterminateTintMode="src_atop"
-            android:layout_gravity="center"/>
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/users_list_recycler_view"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        <com.kinzlstanislav.hoslaviceo2.base.view.StateViewFlipper
+            android:id="@+id/users_list_flipper"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            tools:listitem="@layout/item_user" />
+            android:layout_height="match_parent">
 
-        <TextView
-            style="@style/AppTheme.Text.Errors"
-            android:id="@+id/users_list_generic_error"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="@string/generic_error"/>
+            <ProgressBar
+                android:id="@+id/users_list_loader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:indeterminate="true"
+                android:indeterminateTint="@color/app__blue"
+                android:indeterminateTintMode="src_atop"
+                android:layout_gravity="center"/>
 
-        <TextView
-            style="@style/AppTheme.Text.Errors"
-            android:id="@+id/users_list_network_error"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="@string/network_error"/>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/users_list_recycler_view"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:listitem="@layout/item_user" />
 
-    </com.kinzlstanislav.hoslaviceo2.base.view.StateViewFlipper>
+            <TextView
+                style="@style/AppTheme.Text.Errors"
+                android:id="@+id/users_list_generic_error"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/generic_error"/>
+
+            <TextView
+                style="@style/AppTheme.Text.Errors"
+                android:id="@+id/users_list_network_error"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/network_error"/>
+
+        </com.kinzlstanislav.hoslaviceo2.base.view.StateViewFlipper>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
