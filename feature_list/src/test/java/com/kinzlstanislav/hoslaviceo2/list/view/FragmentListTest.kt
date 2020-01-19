@@ -80,7 +80,7 @@ class FragmentListTest : FragmentKoinTest<FragmentList>() {
         subjectVMState.set(UsersLoaded(SOME_USERS))
         assertListWithAllMembersIsDisplayedCorrectly()
 
-        // refreshing (with robolectric espresso actions won't work unfortunately)
+        // refreshing (with robolectric swipe to refresh espresso actions won't work unfortunately)
         subject.refreshListener.onRefresh()
         verify {
             mockViewModel.getUsers()
