@@ -36,4 +36,9 @@ class UsersRepository(
             }
         } else FetchUsersGenericError
     }
+
+    @Throws(IOException::class)
+    suspend fun removeUserFromLocalDb(user: User) {
+        database.usersDao().delete(user)
+    }
 }

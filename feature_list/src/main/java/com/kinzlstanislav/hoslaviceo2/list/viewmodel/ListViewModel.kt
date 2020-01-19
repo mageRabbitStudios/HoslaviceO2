@@ -46,4 +46,10 @@ class ListViewModel(
             }
         }
     }
+
+    fun removeUserFromLocalDb(user: User) {
+        coroutine {
+            usersRepository.removeUserFromLocalDb(user)
+        }
+    }
 }

@@ -10,7 +10,8 @@ import com.kinzlstanislav.hoslaviceo2.list.R
 class UsersAdapter(private val imageLoader: GlideImageLoader)
     : RecyclerView.Adapter<UserViewHolder>() {
 
-    private val usersList: MutableList<User> = mutableListOf()
+    private val _usersList: MutableList<User> = mutableListOf()
+    val usersList: List<User> = _usersList
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = UserViewHolder(
         parent.inflateViewHolder(R.layout.item_user), imageLoader
@@ -23,10 +24,15 @@ class UsersAdapter(private val imageLoader: GlideImageLoader)
     }
 
     fun updateItems(users: List<User>) {
-        usersList.apply {
+        _usersList.apply {
             clear()
             addAll(users)
         }
         notifyDataSetChanged()
+    }
+
+    fun removeAt(position: Int) {
+        _usersList.removeAt(position)
+        notifyItemRemoved(position)
     }
 }

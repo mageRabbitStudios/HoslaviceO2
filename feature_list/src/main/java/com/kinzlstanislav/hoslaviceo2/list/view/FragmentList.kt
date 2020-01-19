@@ -1,7 +1,10 @@
 package com.kinzlstanislav.hoslaviceo2.list.view
 
 import androidx.lifecycle.Observer
+import androidx.recyclerview.widget.ItemTouchHelper
+import androidx.recyclerview.widget.RecyclerView
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+import com.kinzlstanislav.hoslaviceo2.base.adapter.SwipeToDeleteCallback
 import com.kinzlstanislav.hoslaviceo2.base.extensions.observe
 import com.kinzlstanislav.hoslaviceo2.base.extensions.showToast
 import com.kinzlstanislav.hoslaviceo2.base.imageloading.GlideImageLoader
@@ -25,7 +28,16 @@ class FragmentList : BaseFragment() {
     private val listViewModel: ListViewModel by sharedViewModel()
     private val imageLoader: GlideImageLoader by inject()
 
-    private val usersAdapter: UsersAdapter by lazy { UsersAdapter(imageLoader) }
+    private val usersAdapter: UsersAdapter by lazy {
+        val swipeHandler = object : SwipeToDeleteCallback(requireContext()) {
+            override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
+                listViewModel.removeUserFromLocalDb(usersAdapter.usersList[viewHolder.adapterPosition])
+                usersAdapter.removeAt(viewHolder.adapterPosition)
+            }
+        }
+        ItemTouchHelper(swipeHandler).attachToRecyclerView(users_list_recycler_view)
+        UsersAdapter(imageLoader)
+    }
 
     override fun onFragmentCreated() {
         observe(listViewModel.state, Observer { state ->
