@@ -25,8 +25,12 @@ class FragmentList : BaseFragment() {
         requireActivity().finishAndRemoveTask()
     }
 
-    private val listViewModel: ListViewModel by sharedViewModel()
+    val listViewModel: ListViewModel by sharedViewModel()
     private val imageLoader: GlideImageLoader by inject()
+    val refreshListener = SwipeRefreshLayout.OnRefreshListener {
+        listViewModel.getUsers()
+        users_swipe_to_refresh.isRefreshing = false
+    }
 
     private val usersAdapter: UsersAdapter by lazy {
         val swipeHandler = object : SwipeToDeleteCallback(requireContext()) {
@@ -44,11 +48,11 @@ class FragmentList : BaseFragment() {
             users_list_flipper.showView(when (state) {
                 is UsersLoadedOffline -> users_list_recycler_view.also {
                     usersAdapter.updateItems(state.users)
-                    showToast("LOL: Users loaded from offline database")
+                    showToast("Users loaded from offline database")
                 }
                 is UsersLoaded -> users_list_recycler_view.also {
                     usersAdapter.updateItems(state.users)
-                    showToast("Users loaded online")
+                    showToast("Users loaded from online api")
                 }
                 LoadingUsers -> users_list_loader
                 NetworkError -> users_list_network_error
@@ -56,11 +60,6 @@ class FragmentList : BaseFragment() {
             })
         })
         users_list_recycler_view.adapter = usersAdapter
-        users_swipe_to_refresh.apply {
-            setOnRefreshListener {
-                listViewModel.getUsers()
-                isRefreshing = false
-            }
-        }
+        users_swipe_to_refresh.setOnRefreshListener(refreshListener)
     }
 }

@@ -1,15 +1,16 @@
 package com.kinzlstanislav.hoslaviceo2.viewtesting.matchers
 
+import android.view.View
 import androidx.recyclerview.widget.RecyclerView
-import androidx.test.espresso.Espresso
+import androidx.test.espresso.*
 import androidx.test.espresso.Espresso.onView
-import androidx.test.espresso.ViewAssertion
-import androidx.test.espresso.ViewInteraction
 import androidx.test.espresso.assertion.ViewAssertions
 import androidx.test.espresso.matcher.ViewMatchers
 import androidx.test.espresso.matcher.ViewMatchers.withId
 import com.kinzlstanislav.hoslaviceo2.viewtesting.FragmentKoinTest
 import org.assertj.core.api.Assertions.assertThat
+import org.hamcrest.Matcher
+
 
 /**Matchers that are not included with Barista*/
 

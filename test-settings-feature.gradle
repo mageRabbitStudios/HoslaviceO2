@@ -1,6 +1,9 @@
 dependencies {
     testImplementation TestDependencies.androidxJunit
-    testImplementation TestDependencies.robolectric
+    testImplementation(TestDependencies.robolectric) {
+        // Required as of 4.2
+        exclude group: 'com.google.auto.service', module: 'auto-service'
+    }
 
     testImplementation TestDependencies.espressoCore
     testImplementation TestDependencies.espressoIntents

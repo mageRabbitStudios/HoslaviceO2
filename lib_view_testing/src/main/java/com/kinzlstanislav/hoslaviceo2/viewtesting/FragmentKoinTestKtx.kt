@@ -1,5 +1,6 @@
 package com.kinzlstanislav.hoslaviceo2.viewtesting
 
+import android.os.Looper
 import android.view.View
 import androidx.annotation.ColorRes
 import androidx.annotation.DrawableRes
@@ -7,24 +8,36 @@ import androidx.annotation.IntegerRes
 import androidx.annotation.StringRes
 import androidx.core.content.ContextCompat
 import androidx.test.espresso.Espresso
+import androidx.test.espresso.Espresso.onView
+import androidx.test.espresso.assertion.ViewAssertions.matches
 import androidx.test.espresso.matcher.ViewMatchers
+import androidx.test.espresso.matcher.ViewMatchers.withId
+import androidx.test.espresso.matcher.ViewMatchers.withText
 import com.kinzlstanislav.hoslaviceo2.viewtesting.helpers.InstrumentationTestsHelper
 import com.kinzlstanislav.hoslaviceo2.viewtesting.matchers.isGone
 import com.kinzlstanislav.hoslaviceo2.viewtesting.matchers.isInvisible
 import com.kinzlstanislav.hoslaviceo2.viewtesting.matchers.isVisible
+import org.assertj.core.api.Assertions
 import org.junit.Assert
+import org.robolectric.Shadows
+import org.robolectric.annotation.LooperMode
+import org.robolectric.config.ConfigurationRegistry
 
-fun FragmentKoinTest<*>.isViewGone(resourceId: Int) {
-    Espresso.onView(ViewMatchers.withId(resourceId)).isGone()
+fun FragmentKoinTest<*>.assertIsViewGone(resourceId: Int) {
+    getViewFromActivityById(resourceId)?.let {
+        Assertions.assertThat(it.visibility).isEqualTo(View.GONE)
+    }
 }
 
-fun FragmentKoinTest<*>.isViewVisible(resourceId: Int) {
-    Espresso.onView(ViewMatchers.withId(resourceId)).isVisible()
-}
+fun FragmentKoinTest<*>.assertIsViewVisible(resourceId: Int) {
+    getViewFromActivityById(resourceId)?.let {
+        Assertions.assertThat(it.visibility).isEqualTo(View.VISIBLE)
+    }}
 
-fun FragmentKoinTest<*>.isViewInvisible(resourceId: Int) {
-    Espresso.onView(ViewMatchers.withId(resourceId)).isInvisible()
-}
+fun FragmentKoinTest<*>.assertIsViewInvisible(resourceId: Int) {
+    getViewFromActivityById(resourceId)?.let {
+        Assertions.assertThat(it.visibility).isEqualTo(View.INVISIBLE)
+    }}
 
 /**
  * Great for asserting whenever your view is in the hierarchy or not
@@ -53,3 +66,19 @@ fun FragmentKoinTest<*>.getViewFromActivityById(id: Int): View? {
     }
     return null
 }
+
+fun FragmentKoinTest<*>.assertHasText(id: Int, text: String) {
+    onView(withId(id)).check(matches(withText(text)))
+}
+
+/**
+ * Executes all posted tasks on the main looper, such as animations.
+ * */
+fun FragmentKoinTest<*>.executeAllPostedTasksOnMainLooper() {
+    if (isLooperModePaused()) {
+        Shadows.shadowOf(Looper.getMainLooper()).idle()
+    } else throw UninitializedPropertyAccessException("Idling on looper won't work if the mode in't " +
+            "PAUSED (Realistic). Add @LooperMode(LooperMode.Mode.PAUSED) as an annotation to the test function.")
+}
+
+private fun isLooperModePaused() = ConfigurationRegistry.get(LooperMode.Mode::class.java) == LooperMode.Mode.PAUSED

@@ -30,7 +30,7 @@ object Versions {
 
     const val glideVersion = "4.8.0"
 
-    const val robolectricVersion = "4.1"
+    const val robolectricVersion = "4.3.1"
     const val androidxTestVersion = "1.1.1"
     const val androidTestRunnerVersion = "1.1.0-alpha4"
     const val uiAutomatorVersion = "2.2.0-alpha4"
@@ -45,7 +45,7 @@ object Versions {
     const val androidxFragmentTestingVersion = "1.1.0-alpha06"
     const val androidxTestCoreVersion = "1.0.0"
 
-    const val baristaVersion = "2.8.0"
+    const val baristaVersion = "3.2.0"
 
     const val fabricGradlePluginVersion = "1.28.0"
     const val detektGradlePluginVersion = "1.0.0-RC14"

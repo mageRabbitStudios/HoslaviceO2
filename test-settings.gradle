@@ -22,15 +22,15 @@ dependencies {
     testImplementation(TestDependencies.mockitoCore) { transitive = false  }
     testImplementation(TestDependencies.mockitoInline) { transitive = false  }
     testImplementation TestDependencies.mockk
-//todO: CHECK IF NECCESSARY
-//    testImplementation ('net.bytebuddy:byte-buddy:1.8.22') {
-//        force = true
-//    }
-//    testImplementation ('net.bytebuddy:byte-buddy-agent:1.8.22') {
-//        force = true
-//    }
-//
-//    testImplementation ('org.objenesis:objenesis:3.0.1') {
-//        force = true
-//    }
+
+    testImplementation ('net.bytebuddy:byte-buddy:1.8.22') {
+        force = true
+    }
+    testImplementation ('net.bytebuddy:byte-buddy-agent:1.8.22') {
+        force = true
+    }
+
+    testImplementation ('org.objenesis:objenesis:3.0.1') {
+        force = true
+    }
 }
