@@ -2,10 +2,8 @@ package com.kinzlstanislav.hoslaviceo2.list.view
 
 import androidx.lifecycle.MutableLiveData
 import androidx.recyclerview.widget.RecyclerView
-import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import androidx.test.espresso.Espresso.onView
 import androidx.test.espresso.action.ViewActions.swipeLeft
-import androidx.test.espresso.contrib.RecyclerViewActions
 import androidx.test.espresso.contrib.RecyclerViewActions.actionOnItemAtPosition
 import androidx.test.espresso.matcher.ViewMatchers.withId
 import com.kinzlstanislav.hoslaviceo2.architecture.repository.model.User
@@ -20,13 +18,10 @@ import com.kinzlstanislav.hoslaviceo2.viewtesting.*
 import com.kinzlstanislav.hoslaviceo2.viewtesting.matchers.assertViewHolderOfItemAtPosition
 import com.schibsted.spain.barista.assertion.BaristaListAssertions.assertDisplayedAtPosition
 import com.schibsted.spain.barista.assertion.BaristaListAssertions.assertListItemCount
-import com.schibsted.spain.barista.interaction.BaristaSwipeRefreshInteractions.refresh
 import io.mockk.every
 import io.mockk.mockk
 import io.mockk.verify
-import kotlinx.android.synthetic.main.fragment_list.*
 import org.junit.Test
-import org.robolectric.annotation.LooperMode
 
 class FragmentListTest : FragmentKoinTest<FragmentList>() {
 
