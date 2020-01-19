@@ -1,4 +1,4 @@
-package com.kinzlstanislav.hoslaviceo2.architecture.network.model
+package com.kinzlstanislav.hoslaviceo2.architecture.repository.model
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity

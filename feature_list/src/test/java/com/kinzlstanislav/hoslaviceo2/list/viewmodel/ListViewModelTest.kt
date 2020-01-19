@@ -1,10 +1,10 @@
 package com.kinzlstanislav.hoslaviceo2.list.viewmodel
 
 import androidx.lifecycle.MutableLiveData
-import com.kinzlstanislav.hoslaviceo2.architecture.network.UsersRepository
-import com.kinzlstanislav.hoslaviceo2.architecture.network.UsersRepository.UsersFetchResult
-import com.kinzlstanislav.hoslaviceo2.architecture.network.UsersRepository.UsersFetchResult.*
-import com.kinzlstanislav.hoslaviceo2.architecture.network.model.User
+import com.kinzlstanislav.hoslaviceo2.architecture.repository.UsersRepository
+import com.kinzlstanislav.hoslaviceo2.architecture.repository.UsersRepository.UsersFetchResult
+import com.kinzlstanislav.hoslaviceo2.architecture.repository.UsersRepository.UsersFetchResult.*
+import com.kinzlstanislav.hoslaviceo2.architecture.repository.model.User
 import com.kinzlstanislav.hoslaviceo2.base.extensions.set
 import com.kinzlstanislav.hoslaviceo2.list.viewmodel.ListViewModel.ListState
 import com.kinzlstanislav.hoslaviceo2.list.viewmodel.ListViewModel.ListState.*
@@ -15,7 +15,8 @@ import org.junit.Test
 class ListViewModelTest : BaseViewModelTest() {
 
     private companion object {
-        val SOME_USER = User(0, "", "",  false, "")
+        val SOME_USER =
+            User(0, "", "", false, "")
     }
     private val mockUsersRepository = mockk<UsersRepository>()
     private val mockState = mockk<MutableLiveData<ListState>>(relaxed = true)

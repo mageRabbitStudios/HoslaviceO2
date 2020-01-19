@@ -1,6 +1,6 @@
-package com.kinzlstanislav.hoslaviceo2.architecture.network.mapper
+package com.kinzlstanislav.hoslaviceo2.architecture.repository.mapper
 
-import com.kinzlstanislav.hoslaviceo2.architecture.network.model.User
+import com.kinzlstanislav.hoslaviceo2.architecture.repository.model.User
 import com.kinzlstanislav.hoslaviceo2.architecture.network.response.UsersResponse
 
 class UsersMapper {
@@ -14,10 +14,13 @@ class UsersMapper {
             with(it) {
                 this@apply.add(
                     User(
-                        name = alias ?: UNKNOWN,
-                        phoneNumber = phoneNumber ?: UNKNOWN,
+                        name = alias
+                            ?: UNKNOWN,
+                        phoneNumber = phoneNumber
+                            ?: UNKNOWN,
                         isMaster = isMaster ?: false,
-                        avatarUrl = pictureUrl ?: UNKNOWN
+                        avatarUrl = pictureUrl
+                            ?: UNKNOWN
                     )
                 )
             }

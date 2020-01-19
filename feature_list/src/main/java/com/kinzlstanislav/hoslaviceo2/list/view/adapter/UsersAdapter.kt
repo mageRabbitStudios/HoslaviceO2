@@ -2,7 +2,7 @@ package com.kinzlstanislav.hoslaviceo2.list.view.adapter
 
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.kinzlstanislav.hoslaviceo2.architecture.network.model.User
+import com.kinzlstanislav.hoslaviceo2.architecture.repository.model.User
 import com.kinzlstanislav.hoslaviceo2.base.extensions.inflateViewHolder
 import com.kinzlstanislav.hoslaviceo2.base.imageloading.GlideImageLoader
 import com.kinzlstanislav.hoslaviceo2.list.R

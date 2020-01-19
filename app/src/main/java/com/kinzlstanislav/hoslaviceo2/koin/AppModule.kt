@@ -4,10 +4,10 @@ import androidx.room.Room
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
 import com.kinzlstanislav.hoslaviceo2.BuildConfig
 import com.kinzlstanislav.hoslaviceo2.architecture.network.HoslaviceO2RestData
-import com.kinzlstanislav.hoslaviceo2.architecture.network.UsersRepository
+import com.kinzlstanislav.hoslaviceo2.architecture.repository.UsersRepository
 import com.kinzlstanislav.hoslaviceo2.architecture.network.api.HoslaviceO2ApiService
-import com.kinzlstanislav.hoslaviceo2.architecture.network.database.AppDatabase
-import com.kinzlstanislav.hoslaviceo2.architecture.network.mapper.UsersMapper
+import com.kinzlstanislav.hoslaviceo2.architecture.repository.database.AppDatabase
+import com.kinzlstanislav.hoslaviceo2.architecture.repository.mapper.UsersMapper
 import com.kinzlstanislav.hoslaviceo2.base.imageloading.GlideImageLoader
 import com.kinzlstanislav.hoslaviceo2.list.viewmodel.ListViewModel
 import okhttp3.OkHttpClient
@@ -22,7 +22,13 @@ val appModule = module {
     factory { ListViewModel(get()) }
 
     // repository
-    factory { UsersRepository(get(), get(), get()) }
+    factory {
+        UsersRepository(
+            get(),
+            get(),
+            get()
+        )
+    }
 
     // mapper
     factory { UsersMapper() }

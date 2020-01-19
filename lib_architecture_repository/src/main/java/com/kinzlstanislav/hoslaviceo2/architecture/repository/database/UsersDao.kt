@@ -1,10 +1,10 @@
-package com.kinzlstanislav.hoslaviceo2.architecture.network.database
+package com.kinzlstanislav.hoslaviceo2.architecture.repository.database
 
 import androidx.room.Dao
 import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.Query
-import com.kinzlstanislav.hoslaviceo2.architecture.network.model.User
+import com.kinzlstanislav.hoslaviceo2.architecture.repository.model.User
 
 @Dao
 interface UsersDao {
